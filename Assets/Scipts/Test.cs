@@ -8,6 +8,8 @@ public class Test : MonoBehaviour
     void Start()
     {
         int test = 0;
+
+        string testMassege = "Massege from my lap";
     }
 
     // Update is called once per frame
