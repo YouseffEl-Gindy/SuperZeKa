@@ -19,7 +19,7 @@ public class BulletScript : MonoBehaviour
         if(collision.gameObject.CompareTag("Enemy"))
         {
             collision.gameObject.GetComponent<EnemyHealth>().TakeDamage();
-
+            Debug.Log("Enemy Hited", this);
             Reset();
         }
         else

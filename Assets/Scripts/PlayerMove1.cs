@@ -22,6 +22,7 @@ public class PlayerMove1 : MonoBehaviour
     [SerializeField] Animator animator;
     [SerializeField] BoxCollider2D boxCollider;
     [SerializeField] LayerMask jumpableGround;
+    [SerializeField] GameObject trail;
     #endregion
 
     private enum playerState
@@ -83,12 +84,10 @@ public class PlayerMove1 : MonoBehaviour
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
             AudioManager.Instance.PlaySFX("Jump");
             jumps++;
-            Debug.Log("Jumps = " + jumps, this);
         }
         if(IsGrounded())
         {            
             jumps = 0;
-            Debug.Log("Jumps = " + jumps, this);
         }
     }
 
@@ -127,8 +126,17 @@ public class PlayerMove1 : MonoBehaviour
     }
     void SpeedUp()
     {
-        if (Input.GetKey(KeyCode.LeftShift))speed = speedUp;        
-        else speed = normalSpeed;
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            speed = speedUp;
+            trail.SetActive(true);
+        }
+        else
+        {
+            speed = normalSpeed;
+            trail.SetActive(false);
+        }
+
     }
     bool doubleJump()
     {

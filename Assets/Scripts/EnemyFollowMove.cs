@@ -10,6 +10,7 @@ public class EnemyFollowMove : MonoBehaviour
     [SerializeField] Transform player;
     [SerializeField] Animator animator;
     [SerializeField] SpriteRenderer spriteRenderer;
+    [SerializeField] GameObject activeLight;
 
 
 
@@ -44,7 +45,11 @@ public class EnemyFollowMove : MonoBehaviour
             }
 
             transform.Translate(direction.normalized * speed * Time.deltaTime);
+            activeLight.SetActive(true);
         }
+        else activeLight.SetActive(false);
+       
         animator.SetInteger("State", (int)state);
+        
     }
 }
