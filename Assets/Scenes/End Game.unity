@@ -230,6 +230,7 @@ MonoBehaviour:
   menu: {fileID: 1942350704}
   optionMenu: {fileID: 0}
   pauseMenu: {fileID: 0}
+  gameOverMenu: {fileID: 0}
   pauseButton: {fileID: 0}
 --- !u!4 &486619202
 Transform:
@@ -598,7 +599,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 659333207}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 486619201}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: Quit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &659333207
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1405,7 +1418,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1997501316}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 486619201}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: ReastartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1997501316
 MonoBehaviour:
   m_ObjectHideFlags: 0

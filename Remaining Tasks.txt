@@ -1,12 +1,11 @@
-Cinemachine
 
 Add tutorial Scene
 
-End game scene
 
-Game over menu
 
-HUD with player health and ememy health bar
+
+
+
 
 click sounds
 
@@ -16,5 +15,4 @@ show the number of remaing enemies
 
 add events
 
-
-
+edit the update method to be fixed update or equavelent

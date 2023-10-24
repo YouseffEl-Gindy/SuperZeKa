@@ -30,26 +30,33 @@ public class EnemyFollowMove : MonoBehaviour
     {
         EnemyState state = EnemyState.Idle;
 
-        float distance = Vector3.Distance(transform.position, player.position);
-        if (distance <= range)
+        if (player != null)
         {
-            state = EnemyState.Run;
-            Vector3 direction = player.position - transform.position;
-            if(direction.x <0)
-            {
-                spriteRenderer.flipX = true;
-            }
-            else if(direction.x > 0) 
-            {
-                spriteRenderer.flipX = false;
-            }
 
-            transform.Translate(direction.normalized * speed * Time.deltaTime);
-            activeLight.SetActive(true);
+
+            {
+
+            }
+            float distance = Vector3.Distance(transform.position, player.position);
+            if (distance <= range)
+            {
+                state = EnemyState.Run;
+                Vector3 direction = player.position - transform.position;
+                if (direction.x < 0)
+                {
+                    spriteRenderer.flipX = true;
+                }
+                else if (direction.x > 0)
+                {
+                    spriteRenderer.flipX = false;
+                }
+
+                transform.Translate(direction.normalized * speed * Time.deltaTime);
+                activeLight.SetActive(true);
+            }
+            else activeLight.SetActive(false);
+
+            animator.SetInteger("State", (int)state);
         }
-        else activeLight.SetActive(false);
-       
-        animator.SetInteger("State", (int)state);
-        
     }
 }

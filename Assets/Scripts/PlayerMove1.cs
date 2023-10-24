@@ -24,6 +24,7 @@ public class PlayerMove1 : MonoBehaviour
     [SerializeField] BoxCollider2D boxCollider;
     [SerializeField] LayerMask jumpableGround;
     [SerializeField] GameObject trail;
+    [SerializeField] GameObject healthBar;
     #endregion
 
     private enum playerState
@@ -71,11 +72,13 @@ public class PlayerMove1 : MonoBehaviour
         if (horizontalMove > 0)
         {
             transform.localScale = new Vector3(1, 1, 1);
+            healthBar.transform.localScale = new Vector3(0.01f, 0.01f, 0.01f);
             direction = 1f;
         }
         else if (horizontalMove < 0)
         {
             transform.localScale = new Vector3(-1, 1, 1);
+            healthBar.transform.localScale = new Vector3(-0.01f, 0.01f, 0.01f);
             direction = -1f;
         }
         rb.velocity = new Vector2(horizontalMove * speed, rb.velocity.y);

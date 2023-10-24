@@ -59,4 +59,8 @@ public class EnemyHealth : MonoBehaviour
             timeToNextHit = intervalBetweenHits;
         }
     }
+    public float GetHealthPercentage()
+    {
+        return (float)currentHits / (float)maxHits;
+    }
 }

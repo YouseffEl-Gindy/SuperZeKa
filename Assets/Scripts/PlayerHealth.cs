@@ -40,12 +40,17 @@ public class PlayerHealth : MonoBehaviour
             OnPlayerHit?.Invoke();
         }
     }
+
+    public float GetHealthPercentage()
+    {
+        return (float)currentHits / (float)maxHits;
+    }
     public void Die()
     {
         // To be continued
+        MenuManager.Instance.GameOver();
+        GameObject.Destroy(gameObject);
+
     }
-    private void Update()
-    {
-        //Debug.Log("PLayerHealth :" + currentHits, this);
-    }
+    
 }
