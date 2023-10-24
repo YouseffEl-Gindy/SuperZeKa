@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMove1 : MonoBehaviour
 {
@@ -142,5 +143,11 @@ public class PlayerMove1 : MonoBehaviour
     {
         if (jumps < 1) return true;
         return false;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("End")) 
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 615552412153561582}
   - component: {fileID: 7439464402481106706}
   - component: {fileID: 5802006504631567575}
+  - component: {fileID: 6568792059852912548}
   m_Layer: 0
   m_Name: Check Point Flag
   m_TagString: Untagged
@@ -152,3 +153,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.875, y: 2.875}
   m_EdgeRadius: 0
+--- !u!114 &6568792059852912548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6663264454981580011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5d8ba4f7ec01b04980237e20ad9910a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
